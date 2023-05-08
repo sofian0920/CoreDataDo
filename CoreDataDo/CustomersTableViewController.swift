@@ -11,13 +11,7 @@ import CoreData
 class CustomersTableViewController: UITableViewController {
 
     
-    var fetchedResultsController: NSFetchedResultsController = {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Customers")
-        let sortDescription = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescription]
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.instance.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        return fetchedResultsController
-    }()
+    var fetchedResultsController: NSFetchedResultsController = CoreDataManager.instance.fetchedResultsController(entityName: "Customer", keyForSort: "name")
     
     
     override func viewDidLoad() {

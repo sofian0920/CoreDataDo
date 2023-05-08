@@ -18,6 +18,14 @@ class CoreDataManager {
         return NSEntityDescription.entity(forEntityName: entityName, in: self.managedObjectContext)!
         }
     
+    func fetchedResultsController(entityName: String, keyForSort: String) -> NSFetchedResultsController<NSFetchRequestResult>{
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+            let sortDescription = NSSortDescriptor(key: keyForSort, ascending: true)
+            fetchRequest.sortDescriptors = [sortDescription]
+            let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.instance.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            return fetchedResultsController
+    }
+    
     lazy var applicationDocumentsDirectory: NSURL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1] as NSURL

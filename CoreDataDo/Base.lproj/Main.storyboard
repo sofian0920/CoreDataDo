@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iUX-oc-Wvx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -75,11 +75,29 @@
                             <outlet property="delegate" destination="fKk-H1-uyg" id="cmp-VZ-HJp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Customers" id="cVh-OG-PRW"/>
+                    <navigationItem key="navigationItem" title="Customers" customizationIdentifier="" id="cVh-OG-PRW"/>
+                    <connections>
+                        <segue destination="kWv-fA-SGw" kind="presentation" identifier="customersToCustomer" id="chu-CM-nX7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHW-X1-pYD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1946" y="4"/>
+        </scene>
+        <!--Customer-->
+        <scene sceneID="E54-po-DAB">
+            <objects>
+                <viewController title="Customer" id="kWv-fA-SGw" customClass="CustomerViewController" customModule="CoreDataDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nie-Ys-JRY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LkE-Ql-Wjp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2x-yI-JpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2835.8778625954196" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gam-uA-IAm">
