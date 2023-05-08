@@ -23,6 +23,7 @@
 		AC675F902A052B4700F3A531 /* Services+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC675F882A052B4700F3A531 /* Services+CoreDataClass.swift */; };
 		AC675F912A052B4700F3A531 /* Services+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC675F892A052B4700F3A531 /* Services+CoreDataProperties.swift */; };
 		AC675F932A052C0500F3A531 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC675F922A052C0500F3A531 /* CoreDataManager.swift */; };
+		AC6E91632A08FB0500DAC316 /* CustomersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E91622A08FB0500DAC316 /* CustomersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		AC675F882A052B4700F3A531 /* Services+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AC675F892A052B4700F3A531 /* Services+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AC675F922A052C0500F3A531 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		AC6E91622A08FB0500DAC316 /* CustomersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				AC17B7CD2A02AC4E00F3E7F5 /* AppDelegate.swift */,
+				AC6E91622A08FB0500DAC316 /* CustomersTableViewController.swift */,
 				AC17B7CF2A02AC4E00F3E7F5 /* SceneDelegate.swift */,
 				AC17B7D12A02AC4E00F3E7F5 /* ViewController.swift */,
 				AC17B7D32A02AC4E00F3E7F5 /* Main.storyboard */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6E91632A08FB0500DAC316 /* CustomersTableViewController.swift in Sources */,
 				AC675F8D2A052B4700F3A531 /* Order+CoreDataProperties.swift in Sources */,
 				AC675F912A052B4700F3A531 /* Services+CoreDataProperties.swift in Sources */,
 				AC675F8A2A052B4700F3A531 /* Customer+CoreDataClass.swift in Sources */,
