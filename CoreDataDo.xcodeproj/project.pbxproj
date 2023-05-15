@@ -14,6 +14,8 @@
 		AC17B7D82A02AC4E00F3E7F5 /* CoreDataDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC17B7D62A02AC4E00F3E7F5 /* CoreDataDo.xcdatamodeld */; };
 		AC17B7DA2A02AC4F00F3E7F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC17B7D92A02AC4F00F3E7F5 /* Assets.xcassets */; };
 		AC17B7DD2A02AC4F00F3E7F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC17B7DB2A02AC4F00F3E7F5 /* LaunchScreen.storyboard */; };
+		AC6091692A126A8F00E1C2E0 /* ServicesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6091682A126A8F00E1C2E0 /* ServicesTableTableViewController.swift */; };
+		AC60916B2A126EF500E1C2E0 /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC60916A2A126EF500E1C2E0 /* ServiceViewController.swift */; };
 		AC675F932A052C0500F3A531 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC675F922A052C0500F3A531 /* CoreDataManager.swift */; };
 		AC6E91632A08FB0500DAC316 /* CustomersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E91622A08FB0500DAC316 /* CustomersTableViewController.swift */; };
 		AC6E91722A09166A00DAC316 /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E916A2A09166A00DAC316 /* Order+CoreDataClass.swift */; };
@@ -37,6 +39,8 @@
 		AC17B7D92A02AC4F00F3E7F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC17B7DC2A02AC4F00F3E7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC17B7DE2A02AC4F00F3E7F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC6091682A126A8F00E1C2E0 /* ServicesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableTableViewController.swift; sourceTree = "<group>"; };
+		AC60916A2A126EF500E1C2E0 /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		AC675F922A052C0500F3A531 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		AC6E91622A08FB0500DAC316 /* CustomersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersTableViewController.swift; sourceTree = "<group>"; };
 		AC6E916A2A09166A00DAC316 /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -82,10 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				AC675F922A052C0500F3A531 /* CoreDataManager.swift */,
-				AC6E917B2A092BC600DAC316 /* CustomerViewController.swift */,
 				AC17B7CD2A02AC4E00F3E7F5 /* AppDelegate.swift */,
-				AC6E91622A08FB0500DAC316 /* CustomersTableViewController.swift */,
 				AC17B7CF2A02AC4E00F3E7F5 /* SceneDelegate.swift */,
+				AC6091662A126A5100E1C2E0 /* Customer */,
+				AC6091672A126A6400E1C2E0 /* Services */,
 				AC17B7D12A02AC4E00F3E7F5 /* ViewController.swift */,
 				AC17B7D32A02AC4E00F3E7F5 /* Main.storyboard */,
 				AC17B7D92A02AC4F00F3E7F5 /* Assets.xcassets */,
@@ -94,6 +98,24 @@
 				AC17B7D62A02AC4E00F3E7F5 /* CoreDataDo.xcdatamodeld */,
 			);
 			path = CoreDataDo;
+			sourceTree = "<group>";
+		};
+		AC6091662A126A5100E1C2E0 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E917B2A092BC600DAC316 /* CustomerViewController.swift */,
+				AC6E91622A08FB0500DAC316 /* CustomersTableViewController.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		AC6091672A126A6400E1C2E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC6091682A126A8F00E1C2E0 /* ServicesTableTableViewController.swift */,
+				AC60916A2A126EF500E1C2E0 /* ServiceViewController.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		AC6E917A2A09168300DAC316 /* CoreData */ = {
@@ -186,6 +208,7 @@
 				AC6E91732A09166A00DAC316 /* Order+CoreDataProperties.swift in Sources */,
 				AC6E91632A08FB0500DAC316 /* CustomersTableViewController.swift in Sources */,
 				AC6E91772A09166A00DAC316 /* RowOfOrder+CoreDataProperties.swift in Sources */,
+				AC6091692A126A8F00E1C2E0 /* ServicesTableTableViewController.swift in Sources */,
 				AC17B7D22A02AC4E00F3E7F5 /* ViewController.swift in Sources */,
 				AC6E91722A09166A00DAC316 /* Order+CoreDataClass.swift in Sources */,
 				AC6E91742A09166A00DAC316 /* Services+CoreDataClass.swift in Sources */,
@@ -193,6 +216,7 @@
 				AC6E91752A09166A00DAC316 /* Services+CoreDataProperties.swift in Sources */,
 				AC17B7D82A02AC4E00F3E7F5 /* CoreDataDo.xcdatamodeld in Sources */,
 				AC675F932A052C0500F3A531 /* CoreDataManager.swift in Sources */,
+				AC60916B2A126EF500E1C2E0 /* ServiceViewController.swift in Sources */,
 				AC6E91792A09166A00DAC316 /* Customer+CoreDataProperties.swift in Sources */,
 				AC6E917C2A092BC600DAC316 /* CustomerViewController.swift in Sources */,
 				AC17B7CE2A02AC4E00F3E7F5 /* AppDelegate.swift in Sources */,
