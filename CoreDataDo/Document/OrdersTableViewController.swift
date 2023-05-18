@@ -1,55 +1,59 @@
 //
-//  CustomersTableTableViewController.swift
+//  OrdersTableViewController.swift
 //  CoreDataDo
 //
-//  Created by Софья Норина on 8.05.2023.
+//  Created by Софья Норина on 16.05.2023.
 //
 
 import UIKit
 import CoreData
 
-class CustomersTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class OrdersTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+
+    var fetchedResultsController = CoreDataManager.instance.fetchedResultsController(entityName: "Order", keyForSort: "date")
     
-    
-    var fetchedResultsController: NSFetchedResultsController = CoreDataManager.instance.fetchedResultsController(entityName: "Customer", keyForSort: "name")
-    
+    @IBAction func addButton(_ sender: Any) {
+        performSegue(withIdentifier: "orderToOrder", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         fetchedResultsController.delegate = self
-        do {
+        do{
             try fetchedResultsController.performFetch()
         } catch {
             print(error)
         }
+
     }
-    @IBAction func addCustomer(_ sender: Any) {
-        performSegue(withIdentifier: "customersToCustomer", sender: nil)
-    }
-    
+
     // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-    
+
+
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let sections = fetchedResultsController.sections{
+         if let sections = fetchedResultsController.sections {
             return sections[section].numberOfObjects
         } else {
             return 0
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let customer = fetchedResultsController.object(at: indexPath) as! Customer
+        let order = fetchedResultsController.object(at: indexPath) as! Order
         let cell = UITableViewCell()
-        cell.textLabel?.text = customer.name
-        
+        configCell(cell: cell, order: order)
         return cell
     }
     
+    func configCell(cell: UITableViewCell, order: Order) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        let nameOfCustomer = (order.customer == nil) ? "-- Unknown --" : (order.customer!.name!)
+        cell.textLabel?.text = formatter.string(from: order.date!) + "\t" + nameOfCustomer
+    }
+
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .delete {
             let managedObject = fetchedResultsController.object(at: indexPath as IndexPath) as! NSManagedObject
@@ -57,18 +61,16 @@ class CustomersTableViewController: UITableViewController, NSFetchedResultsContr
                CoreDataManager.instance.saveContext()
            }
        }
-       
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let customer = fetchedResultsController.object(at: indexPath as IndexPath) as? Customer
-        performSegue(withIdentifier: "customersToCustomer", sender: customer)
+        performSegue(withIdentifier: "orderToOrder", sender: customer)
     }
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "customersToCustomer" {
-            let controller = segue.destination as! CustomerViewController
-            controller.customer = sender as? Customer
+        if segue.identifier == "orderToOrder" {
+            let controller = segue.destination as! OrdersViewController
+            controller.order = sender as? Order
         }
     }
     
@@ -107,4 +109,5 @@ class CustomersTableViewController: UITableViewController, NSFetchedResultsContr
         }
     }
     
+
 }
